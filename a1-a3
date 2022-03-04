@@ -1,0 +1,83 @@
+package com.jpractice;
+
+import java.util.Scanner;
+
+public class assignment {
+
+public static void main(String[] args) {
+// TODO Auto-generated method stub
+
+// assignment 1
+assignment1();
+
+// assignment 2
+assignment2();
+
+// assignment 3
+int[] num = new int[] {1,2,3,4,5,6,7,8,9};
+assignment3(num);
+
+}
+
+public static void assignment1() {
+Scanner scan = new Scanner(System.in);
+System.out.println("Enter the number of units");
+int units = scan.nextInt();
+int consumption = 0;
+
+if(units > 0 && units <= 50) {
+consumption = units;
+}
+else if(units > 50 && units <= 100) {
+consumption = 50 + ((units-50) *2);
+}
+else if(units > 100 && units <= 200) {
+consumption = 50 + 100 + ((units-100) *3);
+}
+else if(units > 200 && units <= 400) {
+consumption = 50 + 100+ 300 + ((units-200) *4);
+}
+else if(units > 400) {
+consumption = 50 + 100+ 300 + 800 + ((units-400) *5);
+}
+
+System.out.println("Consumption charrge is Rs. " + consumption);
+scan.close();
+
+}
+
+
+public static void assignment2() {
+Scanner scan = new Scanner(System.in);
+System.out.println("Enter 2 integers");
+int a = scan.nextInt();
+int b = scan.nextInt();
+int add = a + b;
+int subtract = a - b;
+int multiply = a * b;
+int divide = a/b;
+
+System.out.println("assignment2: \n");
+System.out.println("a + b = " + add + "\n" + "a - b = " + subtract + "\n" + "a * b = " + multiply + "\n" + "a / b = " + divide + "\n");
+
+scan.close();
+}
+
+public static void assignment3(int[] nums) {
+int len = nums.length;
+int even_sum = 0, odd_sum = 0;
+for(int i = 0; i<len; i++) {
+if(nums[i] %2 == 0) {
+even_sum += nums[i];
+}
+else {
+odd_sum += nums[i];
+}
+}
+
+System.out.println("assignment3: \n");
+System.out.println("Sum of evens: " + even_sum + "\n" + "Sum of odds: " + odd_sum);
+}
+
+
+}
